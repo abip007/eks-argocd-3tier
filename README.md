@@ -103,4 +103,4 @@ commits and pushes. Argo CD syncs within about 60 seconds. To roll back, `git re
 - **Stale Windows Helm cache** (`no cached repo found`): the scripts and Terraform use a private `.helm/` folder.
 - **A failed Helm release blocks reinstall** (`cannot re-use a name`). Run `helm uninstall` on it first.
 
-Costs: the EKS control plane, NAT gateway, ALB and two t3.large nodes are billed by the hour. Destroy the stack when you're done.
+Costs: the EKS control plane, NAT gateway, ALB and two m7i-flex.large nodes are billed by the hour. Destroy the stack when you're done.

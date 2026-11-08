@@ -55,11 +55,11 @@ iam:
 managedNodeGroups:
   - name: general
     amiFamily: AmazonLinux2023
-    instanceType: t3.large
+    instanceType: m7i-flex.large   # free-plan eligible, 29 pods/node
     minSize: 2
     desiredCapacity: 2
     maxSize: 4
-    volumeSize: 50
+    volumeSize: 20
     privateNetworking: true      # nodes in private subnets, egress via NAT
     labels: { role: general }
 

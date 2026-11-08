@@ -8,7 +8,7 @@ cluster_name = "argo-eks"
 # Lock the API to your IP (curl https://checkip.amazonaws.com)
 api_public_access_cidrs = ["0.0.0.0/0"]
 
-node_instance_types = ["t3.large"]
+node_instance_types = ["m7i-flex.large"]
 node_min_size       = 2
 node_desired_size   = 2
 node_max_size       = 4

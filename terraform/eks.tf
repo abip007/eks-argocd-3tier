@@ -105,7 +105,7 @@ resource "aws_eks_node_group" "general" {
   ami_type        = "AL2023_x86_64_STANDARD"
   capacity_type   = "ON_DEMAND"
   instance_types  = var.node_instance_types
-  disk_size       = 50
+  disk_size       = 20
 
   scaling_config {
     min_size     = var.node_min_size

@@ -147,8 +147,8 @@ For each row: **Create role** → Trusted entity **AWS service** → Use case **
 **Cluster `argo-eks` → Compute tab → Add node group**
 
 1. Name `general`, Node IAM role `argo-eks-node-role`, Kubernetes label `role` = `general` → **Next**
-2. AMI type **Amazon Linux 2023 (x86_64) Standard**, Capacity **On-Demand**, Instance type **t3.large**, Disk **50 GiB**.
-   A t3.large fits 35 pods; a t3.small fits only 11, which causes "Too many pods".
+2. AMI type **Amazon Linux 2023 (x86_64) Standard**, Capacity **On-Demand**, Instance type **m7i-flex.large**, Disk **20 GiB**.
+   m7i-flex.large is free-plan eligible and fits 29 pods; a t3.small fits only 11, which causes "Too many pods".
 3. Scaling: **Minimum 2 / Desired 2 / Maximum 4**. Maximum unavailable: **1 node** → **Next**
 4. Subnets: the **3 private** subnets. Leave *Configure remote access* **off** → **Next** → **Create**
 

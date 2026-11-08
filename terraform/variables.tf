@@ -50,9 +50,9 @@ variable "api_public_access_cidrs" {
 
 # ---------- Nodes ----------
 variable "node_instance_types" {
-  description = "t3.large = 35 pods/node, t3.medium = 17, t3.small = 11."
+  description = "Free-plan eligible: m7i-flex.large / c7i-flex.large = 29 pods/node, t3.small = 11."
   type        = list(string)
-  default     = ["t3.large"]
+  default     = ["m7i-flex.large"]
 }
 
 variable "node_min_size" {

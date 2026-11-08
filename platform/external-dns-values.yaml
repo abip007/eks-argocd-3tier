@@ -1,14 +1,14 @@
 # Helm values for the external-dns chart (shell scripts + console guide).
 # Creates Route 53 records for every Ingress host - no manual DNS step.
-# __DOMAIN__, __REGION__ and __CLUSTER__ are filled by scripts/00-configure.sh.
+# bestclick.click, ap-south-1 and argo-eks are filled by scripts/00-configure.sh.
 provider:
   name: aws
 env:
   - name: AWS_DEFAULT_REGION
-    value: __REGION__
-domainFilters: [__DOMAIN__]
+    value: ap-south-1
+domainFilters: [bestclick.click]
 policy: upsert-only          # never delete records it didn't create / safer default
-txtOwnerId: __CLUSTER__      # marks records as owned by this cluster
+txtOwnerId: argo-eks      # marks records as owned by this cluster
 sources: [ingress]
 serviceAccount:
   create: true

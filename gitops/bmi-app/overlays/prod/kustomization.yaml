@@ -8,11 +8,11 @@ resources:
 
 images:
   - name: bmi-backend
-    newName: 014882039467.dkr.ecr.ap-south-1.amazonaws.com/argo-eks/bmi-backend
-    newTag: initial
+    newName: 014882039467.dkr.ecr.ap-south-1.amazonaws.com/bmi-backend
+    newTag: v1
   - name: bmi-frontend
-    newName: 014882039467.dkr.ecr.ap-south-1.amazonaws.com/argo-eks/bmi-frontend
-    newTag: initial
+    newName: 014882039467.dkr.ecr.ap-south-1.amazonaws.com/bmi-frontend
+    newTag: v1
 
 patches:
   - target: { kind: ConfigMap, name: backend-config }

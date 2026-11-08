@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/eksctl-io/eksctl/main/pkg/apis/eksctl.io/v1alpha5/assets/schema.json
 # eksctl cluster definition (used by scripts/01-create-cluster.sh).
 # Double-underscore placeholders are filled by scripts/00-configure.sh.
 # eksctl builds the VPC (3 AZs, public + private subnets, already tagged for

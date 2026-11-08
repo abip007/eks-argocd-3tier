@@ -23,6 +23,7 @@ from `gitops/` in every case.**
 | --- | --- | --- |
 | AWS Console (click-by-click + CloudShell) | [docs/01-console-guide.md](docs/01-console-guide.md) | Learning what each piece is |
 | Shell scripts (eksctl + helm) | [Shell path](#shell-path) | Fast, repeatable, few tools |
+| Command line, step by step (what the scripts do, one command at a time) | [docs/02-command-line-guide.md](docs/02-command-line-guide.md) | Understanding and debugging the scripts |
 | Terraform | [Terraform path](#terraform-path) | Infrastructure as code with state, plan and destroy |
 
 They use the same resource names (`argo-eks-*`), so **don't mix paths in one account**.

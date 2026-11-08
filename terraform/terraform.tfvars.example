@@ -1,0 +1,19 @@
+# Copy to terraform.tfvars and edit. Keep in sync with scripts/config.env,
+# because scripts/00-configure.sh writes the same values into gitops/.
+
+region       = "ap-south-1"
+aws_profile  = "abip007home"
+cluster_name = "argo-eks"
+
+# Lock the API to your IP (curl https://checkip.amazonaws.com)
+api_public_access_cidrs = ["0.0.0.0/0"]
+
+node_instance_types = ["t3.large"]
+node_min_size       = 2
+node_desired_size   = 2
+node_max_size       = 4
+
+domain_name  = "bestclick.click"
+app_host     = "argo-bmi.bestclick.click"
+argocd_host  = "argocd.bestclick.click"
+git_repo_url = "https://github.com/abip007/eks-argocd-3tier.git"

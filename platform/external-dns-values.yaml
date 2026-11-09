@@ -7,6 +7,10 @@ env:
   - name: AWS_DEFAULT_REGION
     value: ap-south-1
 domainFilters: [bestclick.click]
+# Only touch the zone the registrar delegates to. Without this, duplicate zones with the same
+# name get the records and the real zone keeps pointing at an old, deleted ALB.
+extraArgs:
+  - --zone-id-filter=Z070283435VR70B93SKIX
 policy: upsert-only          # never delete records it didn't create / safer default
 txtOwnerId: argo-eks      # marks records as owned by this cluster
 sources: [ingress]

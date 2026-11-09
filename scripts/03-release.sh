@@ -13,8 +13,8 @@ TAG="$(git rev-parse --short HEAD 2>/dev/null || echo manual)-$(date +%Y%m%d%H%M
 say "1. Build and push images ($TAG, linux/amd64)"
 aws ecr get-login-password | docker login --username AWS --password-stdin "$REGISTRY"
 for c in backend frontend; do
-  docker build --platform linux/amd64 -t "$REGISTRY/$CLUSTER/bmi-$c:$TAG" "app/$c"
-  docker push "$REGISTRY/$CLUSTER/bmi-$c:$TAG"
+  docker build --platform linux/amd64 -t "$REGISTRY/bmi-$c:$TAG" "app/$c"
+  docker push "$REGISTRY/bmi-$c:$TAG"
 done
 
 say "2. Bump image tags in Git"

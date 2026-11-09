@@ -27,7 +27,7 @@ fi
 
 say "4. ECR repositories"
 for r in bmi-backend bmi-frontend; do
-  aws ecr delete-repository --repository-name "$CLUSTER/$r" --force >/dev/null 2>&1 && echo "  $CLUSTER/$r deleted" || true
+  aws ecr delete-repository --repository-name "$r" --force >/dev/null 2>&1 && echo "  $r deleted" || true
 done
 
 say "5. IAM policies"

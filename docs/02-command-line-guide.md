@@ -345,8 +345,7 @@ them by ARN (`iam.podIdentityAssociations`).
 
 > **Repo names must match the overlay.** Argo CD pulls whatever
 > [gitops/bmi-app/overlays/prod/kustomization.yaml](../gitops/bmi-app/overlays/prod/kustomization.yaml) names in `newName:`.
-> The overlay now points at **`bmi-backend` / `bmi-frontend`** (no prefix), but `01-create-cluster.sh` and
-> `03-release.sh` still use **`argo-eks/bmi-backend`**. This guide follows the overlay. Check which one you have:
+> The overlay and the scripts use **`bmi-backend` / `bmi-frontend`** (no prefix). Check which one you have:
 > ```bash
 > grep newName gitops/bmi-app/overlays/prod/kustomization.yaml
 > ```

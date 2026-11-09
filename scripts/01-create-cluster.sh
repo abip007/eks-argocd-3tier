@@ -19,10 +19,10 @@ done
 
 say "2. ECR repositories"
 for r in bmi-backend bmi-frontend; do
-  aws ecr describe-repositories --repository-names "$CLUSTER/$r" >/dev/null 2>&1 || \
-    aws ecr create-repository --repository-name "$CLUSTER/$r" \
+  aws ecr describe-repositories --repository-names "$r" >/dev/null 2>&1 || \
+    aws ecr create-repository --repository-name "$r" \
       --image-scanning-configuration scanOnPush=true >/dev/null
-  echo "  $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$CLUSTER/$r"
+  echo "  $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$r"
 done
 
 say "3. EKS cluster (eksctl, ~15-20 min)"

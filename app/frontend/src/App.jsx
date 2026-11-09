@@ -3,34 +3,39 @@ import MeasurementForm from './components/MeasurementForm';
 import TrendChart from './components/TrendChart';
 import api from './api';
 
-export default function App() {
+export default function App()
+{
   const [rows, setRows] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  
-  const load = async () => {
+
+  const load = async () =>
+  {
     setLoading(true);
     setError(null);
-    try {
+    try
+    {
       const r = await api.get('/measurements');
       setRows(r.data.rows);
-    } catch (err) {
+    } catch (err)
+    {
       setError(err.response?.data?.error || 'Failed to load measurements');
-    } finally {
+    } finally
+    {
       setLoading(false);
     }
   };
-  
+
   useEffect(() => { load() }, []);
-  
+
   // Calculate stats
   const latestMeasurement = rows[0];
   const totalMeasurements = rows.length;
-  
+
   return (
     <>
       <header className="app-header">
-        <h1>BMI & Health Tracker</h1>
+        <h1>Hello BMI & Health Tracker</h1>
         <p className="app-subtitle">Track your health metrics and reach your fitness goals</p>
       </header>
 
@@ -83,10 +88,10 @@ export default function App() {
                 rows.slice(0, 10).map(r => (
                   <li key={r.id} className="measurement-item">
                     <span className="measurement-date">
-                      {new Date(r.measurement_date || r.created_at).toLocaleDateString('en-US', { 
-                        month: 'short', 
-                        day: 'numeric', 
-                        year: 'numeric' 
+                      {new Date(r.measurement_date || r.created_at).toLocaleDateString('en-US', {
+                        month: 'short',
+                        day: 'numeric',
+                        year: 'numeric'
                       })}
                     </span>
                     <div className="measurement-data">
